@@ -22,7 +22,8 @@ window.onload = function(){
             portIndex = $(this).index();
             $(".portfolio .portDetail").addClass("active");
             $(this).removeClass("over");
-            $(".portDetail>div").eq(portIndex).addClass("selected")
+            $(this).addClass("click").siblings().removeClass("click");
+            $(".portDetail>div").eq(portIndex).addClass("selected");
         }
     })
 
