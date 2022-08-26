@@ -451,6 +451,7 @@ header{
     left: 50%;
     transform: translateX(-50%);
     
+    visibility: hidden;
     opacity: 0;
     transition: 0.5s;
 }
@@ -475,20 +476,10 @@ header{
 }
 .skill .skillWrap>div>ul>li.active .skillText,
 .skill .skillWrap>div>ul>li.click .skillText{
+    visibility: visible;
     opacity: 1;
 }
-/* .skill .skillWrap>div>ul>li.click{
-    height: 350px;
-}
-.skill .skillWrap>div>ul>li.click .imgBox{
-    top: 0%;
-}
-.skill .skillWrap>div>ul>li.click .imgWrap{
-    top: 0%;
-}
-.skill .skillWrap>div>ul>li.click .skillText{
-    opacity: 1;
-} */
+
 .skill .skillWrap>div>.textWrap{
     position: absolute;
     top: 80%;
