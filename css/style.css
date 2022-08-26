@@ -679,7 +679,7 @@ header{
     .skill .skillWrap>div>ul>li.active,
     .skill .skillWrap>div>ul>li.click{
         /* width: 300px; */
-        height: 250px;
+        height: 210px;
     }
     .skill .skillWrap>div.front>.textWrap{
         width: 100%;
@@ -726,13 +726,61 @@ header{
         transform: translate(-50%, -50%);
     }
     #fp-nav{
-        top: 4%;
+        top: 33px;
+        /* top: 4%; */
     }
     #fp-nav ul li a span,
     .fp-slidesNav ul li a span{
         font-size: 14px;
     }
-
+    .portfolio .portList>ul>li{
+        height: 80px;
+    }
+    .portfolio .portList>ul>li.over{
+        height: 100px;
+    }
+    .portDetail>div>.leftBox{
+        height: 280px;
+        padding: 15px;
+        border-radius: 25px;
+    }
+    .portDetail>div>.leftBox>h2{
+        font-size: 14px;
+    }
+    
+    .portDetail>div>.leftBox>.textBox{
+        padding: 5px 0;
+    }
+    .portDetail>div>.leftBox>.textBox>p>span:first-child{
+        margin-right: 10px;
+    }
+    .portDetail>div>.leftBox>.textBox>h3{
+        font-size: 13px;
+        padding: 0;
+        margin-top: 5px;
+    }
+    .portDetail>div>.leftBox>.closeBtn{
+        top: 10px;
+        right: 12px;
+        max-width: 24px;
+    }
+    .portDetail>div>.rightBox{
+        max-width: 300px;
+        height: 300px;
+    }
+    .skill .skillWrap>div>ul>li{
+        margin: 5px 0;
+    }
+    .skill .skillWrap>div>ul>li.active, 
+    .skill .skillWrap>div>ul>li.click{
+        height: 179px;
+    }
+    .skill .skillWrap>div>ul>li .imgBox{
+        max-width: 42px;
+    }
+    .skill .skillWrap>div>ul>li .imgWrap{
+        max-width: 84px;
+    }
     .skill .skillWrap>div>.textWrap p{
         font-size: 90px;
         line-height: 90px;
@@ -740,6 +788,17 @@ header{
     .skill .skillWrap>.back>.textWrap>div:last-child>p{
         font-size: 60px;
         line-height: 60px;
+    }
+    .skill .skillWrap>div>ul .skillText{
+        top: 14%;
+    }
+    .skill .skillWrap>div>ul .skillText>h2{
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+    .skill .skillWrap>div>ul .skillText>p{
+        margin-bottom: 5px;
+        font-size: 12px;
     }
 }
 
