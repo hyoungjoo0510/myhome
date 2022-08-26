@@ -1,0 +1,762 @@
+/* header */
+header{
+    position: fixed;
+    width: 100%;
+    /* height: 100px; */
+    top: 0;
+    left: 0;
+    padding: 20px 0;
+    z-index: 10;
+}
+/* #nav{
+    display: flex;
+    justify-content: center;
+}
+#nav>li>a{
+    display: block;
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 15px;
+    background-color: rgba(0,0,0,0);
+    transition: 0.5s;
+}
+#nav>li.active>a{
+    color: white;
+    background-color: rgba(0,0,0,0.7);
+} */
+.hdrBg{
+    position: absolute;
+    top: -205px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+    height: 300px;
+    border-radius: 100%;
+    background: #fed404;
+    z-index: -1;
+}
+
+/* #fullpage */
+/* .home */
+.home{
+    position: relative;
+    overflow: hidden;
+}
+.home .homeText{
+    position: absolute;
+    top: 45%;
+    left: 15%;
+    transform: translateY(-50%);
+    z-index: 3;
+}
+.home .homeText>p{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 80px;
+    font-weight: 900;
+    color: white;
+}
+.home .homeText p>span{
+    display: block;
+    line-height: 80px;
+}
+.home .homeText p>span:first-child,
+.home .homeText p>span:last-child>span{
+    color: #fed404;
+    
+}
+.home .homeText p>span:last-child>span{
+    /* line-height: 80px; */
+}
+.home .homeText p>span:nth-child(3)>span{
+    font-size: 10px;
+    font-weight: 400;
+}
+.home .homeText p>span:nth-child(3){
+    height: 80px;
+}
+.home .homeImg{
+    position: absolute;
+    right: 10%;
+    top: 250px;
+    max-width: 800px;
+    z-index: 2;
+}
+.home .homeImg img{
+    width: 100%;
+}
+.home .homeBg{
+    position: absolute;
+    bottom: -100%;
+    right: -10%;
+    /* max-width: 1920px; */
+    width: 100%;
+    height: 100%;
+    transform-origin: top left;
+    transform: rotate(-20deg);
+    background: #fed404;
+    z-index: 1;
+}
+
+/* .portfolio */
+.portfolio{
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio .portfolioBg{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 300px;
+    background: #fed404;
+    z-index: 0;
+}
+.portfolio .portfolioBg>.textBox>p{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 80px;
+    font-weight: 900;
+    letter-spacing: -5px;
+    color: black;
+}
+.portfolio .portfolioBg>.textBox>p>span{
+    display: block;
+    line-height: 80px;
+}
+.portfolio .portList{
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 1000px;
+    width: 100%;
+    z-index: 1;
+}
+.portfolio .portList>ul{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: antiquewhite; */
+}
+.portfolio .portList>ul>li{
+    position: relative;
+    width: 160px;
+    height: 640px;
+    filter: grayscale(100%) brightness(50%);
+    /* background-color: antiquewhite; */
+    cursor: pointer;
+    transition: 0.5s;
+    background-position: top center;
+}
+.portfolio .portList>ul>li.over{
+    width: 200px;
+    filter: grayscale(0%) brightness(100%);
+}
+.portfolio .portList>ul>li:first-child{
+    background-image: url("../images/port_thumbnail_001.jpg");
+    
+}
+.portfolio .portList>ul>li:nth-child(2){
+    background-image: url("../images/port_thumbnail_002.jpg");
+    top: 50px;
+}
+.portfolio .portList>ul>li:nth-child(2) img{
+    filter: drop-shadow(0 0 5px #fff);
+}
+.portfolio .portList>ul>li:nth-child(3){
+    background-image: url("../images/port_thumbnail_003.jpg");
+    top: 100px;
+}
+
+.portfolio .portList>ul>li:nth-child(4){
+    background-image: url("../images/port_thumbnail_004.jpg");
+    top: 50px;
+}
+
+.portfolio .portList>ul>li:last-child{
+    background-image: url("../images/port_thumbnail_005.jpg");
+}
+
+.portfolio .portList>ul>li img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+.portfolio .portSelectBg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+}
+
+.portfolio .portDetail{
+    position: relative;
+    height: 100%;
+    z-index: 10;
+    visibility: hidden;
+    background: rgba(0,0,0,0);
+    transition: 0.5s;
+}
+.portfolio .portDetail.active{
+    visibility: visible;
+    background: rgba(0,0,0,0.5);
+}
+.portDetail>div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 11;
+}
+.portDetail>div.selected{
+    z-index: 15;
+    opacity: 1;
+}
+.portDetail>div>.leftBox{
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    height: 450px;
+    border-radius: 50px;
+    padding: 50px;
+    box-sizing: border-box;
+    background: #fed404;
+    box-shadow: 2px 2px 5px black;
+}
+.portDetail>div>.leftBox>h2{
+    font-weight: 800;
+}
+.portDetail>div>.leftBox>.textBox{
+    padding: 30px 0;
+}
+.portDetail>div>.leftBox>.textBox>p{
+    padding: 5px 0;
+    word-break: keep-all;
+}
+.portDetail>div>.leftBox>.textBox>p>span:first-child{
+    margin-right: 30px;
+    font-weight: 700;
+}
+.portDetail>div>.leftBox>.textBox>h3{
+    padding: 30px 0 10px 0
+}
+.portDetail>div>.leftBox>.textBox>p:last-child{
+    font-size: 14px;
+    line-height: 1.5;
+}
+.portDetail>div>.leftBox>.viewBtn{
+    position: absolute;
+    left: 0;
+    bottom: 7%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.portDetail>div>.leftBox>.viewBtn>div{
+    /* position: relative; */
+    margin: 0 20px;
+}
+.portDetail>div>.leftBox>.viewBtn>div>a{
+    display: block;
+    width: 150px;
+    line-height: 35px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    background: black;
+}
+
+.portDetail>div>.leftBox>.closeBtn{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    max-width: 32px;
+}
+.portDetail>div>.leftBox>.closeBtn img{
+    width: 100%;
+}
+.portDetail>div>.rightBox{
+    position: relative;
+    max-width: 880px;
+    width: 100%;
+    /* height: 700px; */
+}
+.portDetail>div>.rightBox>.viewImg{
+    /* display: flex; */
+}
+.portDetail>div>.rightBox>.viewImg>div{
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(50%, -50%)
+}
+.portDetail>div>.rightBox>.viewImg>.pcImg{
+    max-width: 880px;
+    width: 100%;
+    /* transition: 0.5s; */
+}
+.portDetail>div>.rightBox>.viewImg>.pcImg>img{
+    width: 100%;
+}
+.portDetail>div>.rightBox>.viewImg>.mobileImg{
+    max-width: 830px;
+    width: 100%;
+    right: -100%;
+    /* transition: 0.5s; */
+}
+.portDetail>div.ktm>.rightBox>.viewImg>.mobileImg{
+    max-width: 600px;
+}
+.portDetail>div>.rightBox>.viewImg>.mobileImg>img{
+    width: 100%;
+}
+
+/* .skill */
+.skill{
+    position: relative;
+    background-image: url(../images/skill_back.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+.skill .skillWrap{
+    position: absolute;
+    max-width: 1600px;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background: #fff; */
+}
+.skill .skillWrap>div{
+    position: absolute;
+    width: 100%;
+    /* margin: 200px 0; */
+}
+.skill .skillWrap>.front{
+    top: 15%;
+}
+.skill .skillWrap>.back{
+    top: 50%;
+    /* display: flex;
+    justify-content: space-between; */
+}
+
+.skill .skillWrap>div>ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 350px;
+    /* background-color: antiquewhite; */
+}
+.skill .skillWrap>.back>ul{
+    width: 79.4%;
+    /* width: calc((100% / 5) * 4); */
+}
+.skill .skillWrap>div>ul>li{
+    position: relative;
+    width: 280px;
+    /* width: 100%; */
+    height: 130px;
+    /* height: 350px; */
+    border-radius: 30px;
+    background-color: aliceblue;
+    transition: 0.5s;
+    z-index: 10;
+}
+
+/* .skill .skillWrap>.front>ul>li:first-child:hover{
+    height: 350px;
+} */
+.skill .skillWrap>.front>ul>li:nth-child(1){
+    background: #e76a40;
+}
+.skill .skillWrap>.front>ul>li:nth-child(2){
+    background: #5390c0;
+}
+.skill .skillWrap>.front>ul>li:nth-child(3){
+    background: #e5bc70;
+}
+.skill .skillWrap>.front>ul>li:nth-child(4){
+    background: #337caf;
+}
+.skill .skillWrap>.front>ul>li:nth-child(5){
+    background: #11cafc;
+}
+
+.skill .skillWrap>.back>ul>li:nth-child(1){
+    background: #d86164;
+}
+.skill .skillWrap>.back>ul>li:nth-child(2){
+    background: #b9b7b7;
+}
+.skill .skillWrap>.back>ul>li:nth-child(3){
+    background: #b9b7b7;
+}
+.skill .skillWrap>.back>ul>li:nth-child(4){
+    background: #fcbd5d;
+}
+.skill .skillWrap>div>ul>li .imgWrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    transition: 0.5s;
+}
+.skill .skillWrap>div>ul>li .imgBox{
+    position: absolute;
+    max-width: 70px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+}
+.skill .skillWrap>div>ul>li .imgWrap>.imgBox{
+    position: relative;
+    top: initial;
+    left: initial;
+    transform: none;
+    margin: 0 3px;
+}
+.skill .skillWrap>div>ul .imgBox img{
+    width: 100%;
+    filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.5));
+}
+.skill .skillWrap>div>ul .skillText{
+    position: absolute;
+    max-width: 280px;
+    width: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
+    word-break: keep-all;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    opacity: 0;
+    transition: 0.5s;
+}
+.skill .skillWrap>div>ul .skillText>h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.skill .skillWrap>div>ul .skillText>p{
+    margin-bottom: 10px;
+}
+.skill .skillWrap>div>ul>li.active,
+.skill .skillWrap>div>ul>li.click{
+    height: 350px;
+}
+.skill .skillWrap>div>ul>li.active .imgBox,
+.skill .skillWrap>div>ul>li.click .imgBox{
+    top: 0%;
+}
+.skill .skillWrap>div>ul>li.active .imgWrap,
+.skill .skillWrap>div>ul>li.click .imgWrap{
+    top: 0%;
+}
+.skill .skillWrap>div>ul>li.active .skillText,
+.skill .skillWrap>div>ul>li.click .skillText{
+    opacity: 1;
+}
+/* .skill .skillWrap>div>ul>li.click{
+    height: 350px;
+}
+.skill .skillWrap>div>ul>li.click .imgBox{
+    top: 0%;
+}
+.skill .skillWrap>div>ul>li.click .imgWrap{
+    top: 0%;
+}
+.skill .skillWrap>div>ul>li.click .skillText{
+    opacity: 1;
+} */
+.skill .skillWrap>div>.textWrap{
+    position: absolute;
+    top: 80%;
+    right: 40%;
+    z-index: 1;
+}
+.skill .skillWrap>div>.textWrap>div{
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+.skill .skillWrap>div>.textWrap>div.active{
+    opacity: 1;
+}
+.skill .skillWrap>div>.textWrap p{
+    color: #fed404;
+    font-size: 120px;
+    font-weight: 800;
+    line-height: 120px;
+}
+.skill .skillWrap>.back>.textWrap>div:last-child>p{
+    font-size: 80px;
+    line-height: 80px;
+}
+
+@media screen and (max-width: 1600px) {
+    .home .homeText{
+        left: 5%;
+    }
+    .home .homeImg{
+        right: 5%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .home .homeImg{
+        max-width: 62.5vw;
+    }
+    .portfolio .portList{
+        right: initial;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .portfolio .portDetail>div>div{
+        margin: 0 20px;
+    }
+    .portDetail>div>.rightBox{
+        /* margin: 0 30px; */
+    }
+}
+@media screen and (max-width: 1024px) {
+    .hdrBg{
+        top: -225px;
+    }
+    .home .homeText>p{
+        font-size: 7.8125vw;
+    }
+    .home .homeText p>span{
+        line-height: 7.8125vw;
+    }
+    .home .homeText p>span:nth-child(3){
+        height: 7.8125vw;
+    }
+    .home .homeText p>span:nth-child(3)>span{
+        font-size: 8px;
+    }
+    #fp-nav{
+        top: 5%;
+    }
+    #fp-nav ul li a span,
+    .fp-slidesNav ul li a span{
+        font-size: 18px;
+        padding: 7px 15px;
+    }
+    .portfolio .portList{
+        max-width: 900px;
+        /* height: 600px; */
+    }
+    .portfolio .portList>ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+    .portfolio .portList>ul>li{
+        /* max-width: 900px; */
+        width: 100%;
+        height: 130px;
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+    }
+    .portfolio .portList>ul>li.over{
+        height: 180px;
+        width: 100%;
+        filter: grayscale(0%) brightness(100%);
+    }
+    .portfolio .portList>ul>li:first-child{
+        background-image: url("../images/port_thumbnail_001_r.jpg");
+    }
+    .portfolio .portList>ul>li:nth-child(2){
+        background-image: url("../images/port_thumbnail_002_r.jpg");
+        top: initial;
+    }
+    .portfolio .portList>ul>li:nth-child(3){
+        background-image: url("../images/port_thumbnail_003_r.jpg");
+        top: initial;
+    }
+    .portfolio .portList>ul>li:nth-child(4){
+        background-image: url("../images/port_thumbnail_004_r.jpg");
+        top: initial;
+    }
+    .portfolio .portList>ul>li:last-child{
+        background-image: url("../images/port_thumbnail_005_r.jpg");
+    }
+    .portfolio .portList>ul>li img{
+        width: 160px;
+    }
+    .portDetail>div{
+        /* flex-direction: column; */
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .portDetail>div>.leftBox{
+        height: 330px;
+        padding: 25px;
+    }
+    .portDetail>div>.rightBox{
+        max-width: 600px;
+        height: 500px;
+    }
+    .portDetail>div>.rightBox>.viewImg>.mobileImg{
+        max-width: 500px;
+    }
+    .portDetail>div.ktm>.rightBox>.viewImg>.mobileImg{
+        max-width: 380px;
+    }
+    .portDetail>div.wave>.rightBox>.viewImg>.mobileImg{
+        max-width: 600px;
+    }
+    .portDetail>div>.leftBox>.textBox{
+        padding: 15px 0;
+    }
+    .portDetail>div>.leftBox>.textBox>h3{
+        padding: 10px 0;
+    }
+    .portDetail>div>.leftBox>.textBox>p:nth-child(1),
+    .portDetail>div>.leftBox>.textBox>p:nth-child(2){
+        font-size: 12px;
+    }
+    .portDetail>div>.leftBox>.textBox>p:last-child{
+        font-size: 12px;
+    }
+    .portDetail>div>.leftBox>.closeBtn{
+        top: 20px;
+        right: 25px;
+    }
+
+    .skill .skillWrap>div>ul .skillText{
+        padding: 0 15px;
+    }
+    .skill .skillWrap>div>ul>li .imgWrap{
+        max-width: 132px;
+        width: 100%;
+    }
+    .skill .skillWrap>div>ul>li .imgWrap>.imgBox{
+        width: 50%;
+    }
+} 
+@media screen and (max-width: 768px) {
+    .skill .skillWrap{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .skill .skillWrap>div{
+        position: initial;
+        max-width: 280px;
+    }
+    .skill .skillWrap>div>ul{
+        flex-direction: column;
+        height: initial;
+    }
+    .skill .skillWrap>div>ul>li{
+        /* width: 100px; */
+        width: 100%;
+        height: 80px;
+        margin: 10px 0;
+    }
+    .skill .skillWrap>.back{
+        top: 60%;
+    }
+    .skill .skillWrap>.back>ul{
+        width: 100%;
+    }
+    .skill .skillWrap>div>ul>li.active,
+    .skill .skillWrap>div>ul>li.click{
+        /* width: 300px; */
+        height: 250px;
+    }
+    .skill .skillWrap>div.front>.textWrap{
+        width: 100%;
+        right: 0;
+        text-align: right;
+    }
+    .skill .skillWrap>div.front>.textWrap>div{
+        width: 100%;
+        padding-right: 5%;
+        box-sizing: border-box;
+    }
+    .skill .skillWrap>div.back>.textWrap{
+        right: initial;
+        left: 5%;
+    }
+
+}
+@media screen and (max-width: 640px) {
+    .hdrBg{
+        top: -245px;
+    }
+    .home .homeText p>span:nth-child(3)>span{
+        font-size: 4px;
+    }
+    .home .homeText{
+        width: 300px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .home .homeText>p{
+        font-size: 50px;
+    }
+    .home .homeText p>span{
+        line-height: 50px;
+    }
+    .home .homeText p>span:nth-child(3){
+        height: 50px;
+    }
+    .home .homeImg{
+        position: relative;
+        max-width: 500px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #fp-nav{
+        top: 4%;
+    }
+    #fp-nav ul li a span,
+    .fp-slidesNav ul li a span{
+        font-size: 14px;
+    }
+
+    .skill .skillWrap>div>.textWrap p{
+        font-size: 90px;
+        line-height: 90px;
+    }
+    .skill .skillWrap>.back>.textWrap>div:last-child>p{
+        font-size: 60px;
+        line-height: 60px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .portDetail>div>.leftBox>.viewBtn{
+        bottom: 4%;
+    }
+    .portDetail>div>.leftBox>.viewBtn>div>a{
+        width: 100px;
+    }
+}
