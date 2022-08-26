@@ -198,11 +198,13 @@ header{
     z-index: 10;
     visibility: hidden;
     background: rgba(0,0,0,0);
-    transition: 0.5s;
+    /* transition: 0.5s; */
+    /* z-index: -1; */
 }
 .portfolio .portDetail.active{
     visibility: visible;
     background: rgba(0,0,0,0.5);
+    /* z-index: 2; */
 }
 .portDetail>div{
     display: flex;
@@ -229,6 +231,11 @@ header{
     box-sizing: border-box;
     background: #fed404;
     box-shadow: 2px 2px 5px black;
+    left: -100%;
+    transition: 0.5s;
+}
+.portDetail>div.selected>.leftBox{
+    left: 0;
 }
 .portDetail>div>.leftBox>h2{
     font-weight: 800;
@@ -758,6 +765,9 @@ header{
     .portDetail>div>.rightBox{
         max-width: 300px;
         height: 300px;
+    }
+    .portDetail>div.ktm>.rightBox>.viewImg>.mobileImg{
+        max-width: 200px;
     }
     .skill .skillWrap>div>ul>li{
         margin: 5px 0;
