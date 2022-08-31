@@ -197,13 +197,13 @@ header{
     height: 100%;
     z-index: 10;
     visibility: hidden;
-    background: rgba(0,0,0,0);
+    background-color: rgba(0,0,0,0);
     /* transition: 0.5s; */
     /* z-index: -1; */
 }
 .portfolio .portDetail.active{
     visibility: visible;
-    background: rgba(0,0,0,0.5);
+    /* background: rgba(0,0,0,0.5); */
     /* z-index: 2; */
 }
 .portDetail>div{
@@ -239,12 +239,14 @@ header{
 }
 .portDetail>div>.leftBox>h2{
     font-weight: 800;
+    padding-bottom: 5px;
 }
 .portDetail>div>.leftBox>.textBox{
     padding: 30px 0;
 }
 .portDetail>div>.leftBox>.textBox>p{
-    padding: 5px 0;
+    line-height: 1.5;
+    /* padding: 5px 0; */
     word-break: keep-all;
 }
 .portDetail>div>.leftBox>.textBox>p>span:first-child{
@@ -500,7 +502,6 @@ header{
     font-size: 80px;
     line-height: 80px;
 }
-
 @media screen and (max-width: 1600px) {
     .home .homeText{
         left: 5%;
@@ -756,7 +757,7 @@ header{
     }
     .portDetail>div>.leftBox>.textBox>h3{
         font-size: 13px;
-        padding: 0;
+        padding: 5px 0;
         margin-top: 5px;
     }
     .portDetail>div>.leftBox>.closeBtn{
